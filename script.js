@@ -10,13 +10,28 @@ const personalMovieDB = {
     privat: false
 };
 
-const movieA = prompt('Один из последних просмотренных фильмов?', '');
-const ratingA = +prompt('На сколько оцените его?', '');  
-const movieB = prompt('Один из последних просмотренных фильмов?', '');
-const ratingB = +prompt('На сколько оцените его?', '');  
+// const movieA = prompt('Один из последних просмотренных фильмов?', '');
+// const ratingA = +prompt('На сколько оцените его?', '');  
+// const movieB = prompt('Один из последних просмотренных фильмов?', '');
+// const ratingB = +prompt('На сколько оцените его?', '');  
 
 
-personalMovieDB.movies[movieA] = ratingA;
-personalMovieDB.movies[movieB] = ratingB;
+// personalMovieDB.movies[movieA] = ratingA;
+// personalMovieDB.movies[movieB] = ratingB;
 
-console.log (personalMovieDB);
+// console.log (personalMovieDB);
+
+
+
+for(let i=0; i<2; i++) {
+    const movie = prompt('Один из последних просмотренных фильмов?', '');
+    const rating = +prompt('На сколько оцените его?', '');
+
+    if (movie[i] !== null && rating[i] !== null) {
+        personalMovieDB.movies[movie] = rating;
+        console.log ('done!');
+    } else {
+        console.log('error');
+    }
+}
+console.log(personalMovieDB);
