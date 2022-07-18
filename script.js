@@ -3,7 +3,7 @@
 let numberOfFilms;
 
 function start() {
-   numberOfFilms = prompt('Сколько фильмов Вы уже смотрели?', '');
+   numberOfFilms = prompt('Сколько фильмов Вы уже смотрели?', '').trim;
 
     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
         numberOfFilms = prompt('Сколько фильмов Вы уже смотрели?', '');
@@ -22,8 +22,8 @@ const personalMovieDB = {
 
 function rememberMyFilms () {
     for(let i=0; i<2; i++) {
-        const movie = prompt('Один из последних просмотренных фильмов?', '');
-        const rating = +prompt('На сколько оцените его?', '');
+        const movie = prompt('Один из последних просмотренных фильмов?', '').trim;
+        const rating = +prompt('На сколько оцените его?', '').trim;
     
         if (movie !== null && movie !== '' && rating !== null && rating !== '' && movie.length < 50) {
             personalMovieDB.movies[movie] = rating;
@@ -66,7 +66,7 @@ showMyDB (personalMovieDB.privat);
 // first method
 function writeYourGenres () {
     for (let i=1; i<=3; i++) {
-        const question = prompt(`Ваш улюблений жанр під номером ${i}`, ``);
+        const question = prompt(`Ваш улюблений жанр під номером ${i}`, ``).trim;
 
         if (question !== null && question !== '' && isNaN(question) && question.length < 50) {
             personalMovieDB.genres[i-1]=question;
